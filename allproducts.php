@@ -101,7 +101,7 @@ $get_pro = "select * from products";
 
         $product_id = $row_pro['prd_id'];
         $product_category = $row_pro['prd_cat'];
-        $product_brand = $row_pro['prd_brand'];
+  //      $product_brand = $row_pro['prd_brand'];
         $product_title = $row_pro['prd_title']; 
         $product_price = $row_pro['prd_price'];
         $product_image = $row_pro['prd_img'];
