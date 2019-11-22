@@ -77,7 +77,7 @@ function getpro(){
 
         $product_id = $row_pro['prd_id'];
         $product_category = $row_pro['prd_cat'];
-        $product_brand = $row_pro['prd_brand'];
+      //  $product_brand = $row_pro['prd_brand'];
         $product_title = $row_pro['prd_title']; 
         $product_price = $row_pro['prd_price'];
         $product_image = $row_pro['prd_img'];
@@ -182,7 +182,7 @@ function details(){
 
         $product_id = $row_pro['prd_id'];
         $product_description = $row_pro['prd_desc'];
-        $product_brand = $row_pro['prd_brand'];
+    //    $product_brand = $row_pro['prd_brand'];
         $product_title = $row_pro['prd_title']; 
         $product_price = $row_pro['prd_price'];
         $product_image = $row_pro['prd_img'];
@@ -252,7 +252,7 @@ function get_pro_cat(){
 
            $product_id = $row_pro_cat['prd_id'];
         $product_category = $row_pro_cat['prd_cat'];
-        $product_brand = $row_pro_cat['prd_brand'];
+     //   $product_brand = $row_pro_cat['prd_brand'];
         $product_title = $row_pro_cat['prd_title']; 
         $product_price = $row_pro_cat['prd_price'];
         $product_image = $row_pro_cat['prd_img'];
@@ -410,7 +410,7 @@ function getpro3(){
 
         $product_id = $row_pro['prd_id'];
         $product_category = $row_pro['prd_cat'];
-        $product_brand = $row_pro['prd_brand'];
+       // $product_brand = $row_pro['prd_brand'];
         $product_title = $row_pro['prd_title']; 
         $product_price = $row_pro['prd_price'];
         $product_image = $row_pro['prd_img'];
