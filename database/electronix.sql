@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 21, 2019 at 01:04 PM
+-- Generation Time: Nov 22, 2019 at 10:04 AM
 -- Server version: 10.3.15-MariaDB
 -- PHP Version: 7.3.6
 
@@ -45,30 +45,6 @@ INSERT INTO `ad_log` (`id`, `aname`, `apwd`, `secques`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `brands`
---
-
-CREATE TABLE `brands` (
-  `brand_id` int(100) NOT NULL,
-  `brand_title` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `brands`
---
-
-INSERT INTO `brands` (`brand_id`, `brand_title`) VALUES
-(1, 'HP'),
-(2, 'Asus'),
-(3, 'Dell'),
-(4, 'Nikon'),
-(5, 'Samsung'),
-(7, 'Motorola'),
-(8, 'Intel');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `cart`
 --
 
@@ -77,6 +53,13 @@ CREATE TABLE `cart` (
   `ip_add` varchar(255) NOT NULL,
   `qty` int(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `cart`
+--
+
+INSERT INTO `cart` (`p_id`, `ip_add`, `qty`) VALUES
+(31, '::1', 1);
 
 -- --------------------------------------------------------
 
@@ -100,8 +83,8 @@ INSERT INTO `categories` (`cat_id`, `cat_title`, `catagory_details`) VALUES
 (3, 'Pabda', 'The pabda is a fresh water delicacy, mainly found in swamp, paddy fields. Generally cultivated in\r\nponds pabda is cultivated with other freshwater varieties such as rohu and catla. Pabda makes\r\ndelicious curries and has gained increasing popularity in Bengali fish recipes. It tastes great with\r\nnigella seeds or mustard paste.'),
 (4, 'Tilapiya', 'Tilapia is highly valued as a seafood source due to its many beneficial qualities, which are good\r\nfor health, wealth of nutrients, vitamins, and minerals, including significant amounts of protein,\r\nomega-3 fatty acids, selenium , phosphorous, potassium ,vitamin  B12 , niacin, vitamin B6.'),
 (5, 'Pagasius/ Basa', 'Indian Basa fish an excellent source of high-quality protein and healthy fats like omega-3 fatty\r\nacids. Its cheap cost, mild taste, and flaky, firm texture make it popular worldwide. It is a\r\nfreshwater fish available in India ,'),
-(6, 'Zinga', 'One of the health benefits of prawn is it maintains good cardiovascular health due to its high\r\n\r\ncontent in vitamin B12 contributes to better cardiovascular regulation.\r\nCalcium and vitamin E content in prawns maintains healthy skin, teeth and bones'),
-(7, 'Murrel (Maral)', 'Live Murrel fish is known as Viral meen / Viral fish in Tamil . It is a delicacy in Tamilnadu , Kerala\r\n\r\nand Andhra Pradesh . It is most sought after due to its distinct flavour and taste'),
+(6, 'Murrel (Maral)', 'Live Murrel fish is known as Viral meen / Viral fish in Tamil . It is a delicacy in Tamilnadu , Kerala\r\n\r\nand Andhra Pradesh . It is most sought after due to its distinct flavour and taste'),
+(7, 'Zinga', 'One of the health benefits of prawn is it maintains good cardiovascular health due to its high\r\n\r\ncontent in vitamin B12 contributes to better cardiovascular regulation.\r\nCalcium and vitamin E content in prawns maintains healthy skin, teeth and bones'),
 (8, 'Black Pomfret', 'It is very low in calories and fat. It is rich in protein which is why it helps reduce the risk of cardiovascular\r\ndiseases and also helps to muscles. It contains high amounts of omega 3 fatty acids that supply DHA,\r\ncomponent for development of the brain'),
 (9, 'Surmai', 'This popular sea fish is considered as quite a delicacy and excellent table fare in most parts of India. In\r\nmenu cards, it goes by the name of King Fish. Surmai is flavourful by itself and does not require any special\r\npreparation to enhance its natural taste. Packed with Omega-3 fatty acids, Surmai is one of the healthiest');
 
@@ -125,6 +108,41 @@ CREATE TABLE `products` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
+-- Dumping data for table `products`
+--
+
+INSERT INTO `products` (`prd_id`, `prd_cat`, `prd_title`, `net_weight`, `gross_weight`, `pack_available`, `prd_price`, `prd_desc`, `prd_img`, `prd_keyword`) VALUES
+(1, 1, 'Whole Uncut', '1-3 kg', '1 -3 kg', '0.5 kg x multiple', 200, '', 'Rohu whole.jpg', 'Whole Uncut, Uncut, Whole Uncut'),
+(2, 1, 'whole Cleaned with head			', '0.5 kg', '775 gm', '0.5 kg x multiple', 120, '', 'Rohu whole 1.jpg', 'whole Cleaned with head, with head'),
+(3, 1, 'Bengali cut/ fry cut', ' 0.5 kg', '770 gm', '0.5 kg x multiple', 130, '', 'rohu  bengali cut with head.jpg', 'Bengali cut/ fry cut'),
+(4, 1, 'curry cut without head 				', '0.5 kg', '700 gm', '0.5 kg x multiple', 140, '', 'rohu whole_cut_102969395-600x600.jpg', 'curry cut without head 	'),
+(5, 2, 'Whole Uncut', '1 kg', '1 kg', '0.5 kg x multiple	', 100, '', '', 'Whole Uncut'),
+(6, 2, 'whole Cleaned with head', '0.5 kg', '775 gm', '0.5 kg x multiple', 100, '', '', 'whole Cleaned with head'),
+(7, 2, 'Bengali cut/ fry cut', '0.5 kg', '770 gm', '0.5 kg x multiple', 100, '', '', 'Bengali cut/ fry cut'),
+(8, 2, 'curry cut without head', '0.5 kg', '700 gm', '0.5 kg x multiple', 100, '', '', 'Bengali cut/ fry cut'),
+(9, 3, 'Whole Uncut', '250 gm-500 gm', '250 gm-500 gm', '0.25 kg x multiple', 100, '				\r\n', '', 'Whole Uncut'),
+(10, 3, 'Whole clean with pieces', '250 gm', '350 gm', '0.25 kg x multiple', 100, '', '', 'Whole Uncut'),
+(11, 4, 'Whole Cleaned', '0.5 kg', '620 gm', '0.5 kg x multiple', 100, '			\r\n', '', 'Whole Cleaned'),
+(12, 4, 'Curry / Fry cut', '0.5 kg', '750 gm', '0.5 kg x multiple', 100, '', '', 'Curry / Fry cut'),
+(13, 4, 'Boanless', '0.5 kg', '980 gm', '0.5 kg x multiple', 100, '', '', 'Boanless'),
+(14, 5, 'Whole uncut', '1-3 kg', '1-3 kg', '0.5 kg x multiple', 100, '			', '', 'Whole uncut'),
+(15, 5, 'Whole clean', '0.5 kg', '620 gm', '0.5 kg x multiple', 100, '			', '', 'Whole clean'),
+(16, 5, 'Bangali Cut with Head', '0.5 kg', '700 gm', '0.5 kg x multiple', 100, '', '', 'Bangali Cut with Head'),
+(17, 5, 'Skinless Curry Cut', '0.5 kg', '800 gm', '0.5 kg x multiple', 100, '	 		\r\n', '', 'Skinless Curry Cut'),
+(18, 5, 'Boanless', '0.5 kg', '980 gm', '0.5 kg x multiple', 100, '		', '', 'Boanless'),
+(19, 6, 'Whole Cleaned', '0.5  kg- 3 kg', '05 kg- 3 kg', '0.5 kg x multiple', 100, '', '', 'Whole Cleaned'),
+(20, 6, 'Curry cut with head', '0.5 kg', '700 gm', '0.5 kg x multiple', 100, '			', '', 'Curry cut with head'),
+(21, 7, 'Whole Uncleaned', '0.5 kg', '0.5 kg', '0.5 kg x multiple', 100, ' ', '', 'Whole Uncleaned'),
+(22, 7, 'Cleaned headless', '0.5 kg', '800 gm', '0.5 kg x multiple', 100, '', '', 'Cleaned headless'),
+(23, 8, 'whole cleaned', '0.5 kg', '760 gm', '0.5 kg x multiple', 100, '	 		\r\n	 	', '', 'whole cleaned'),
+(24, 8, 'curry cut ', '0.5 kg', '820 gm', '0.5 kg x multiple', 100, '', '	\r\n	 	', 'curry cut '),
+(25, 8, 'whole uncleaned', '0.5 kg', '0.5 kg', '0.5 kg x multiple', 100, '	', '', 'whole uncleaned'),
+(26, 9, 'Whole clean', '0.5 kg', '620 gm', '0.5 kg x multiple', 450, '\r\n', '', 'Whole clean'),
+(27, 9, 'Bangali Cut with Head', '0.5 kg', '700 gm', '0.5 kg x multiple', 500, '', '', 'Bangali Cut with Head'),
+(28, 9, 'Skinless Curry Cut', '0.5 kg', '800 gm', '0.5 kg x multiple', 500, '', '', 'Skinless Curry Cut'),
+(29, 9, 'Boanless				', '0.5 kg', '980 gm', '0.5 kg x multiple', 600, '', '', 'Boanless');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -134,12 +152,6 @@ CREATE TABLE `products` (
 ALTER TABLE `ad_log`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `aname` (`aname`);
-
---
--- Indexes for table `brands`
---
-ALTER TABLE `brands`
-  ADD PRIMARY KEY (`brand_id`);
 
 --
 -- Indexes for table `cart`
@@ -170,12 +182,6 @@ ALTER TABLE `ad_log`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `brands`
---
-ALTER TABLE `brands`
-  MODIFY `brand_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
---
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
@@ -185,7 +191,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `prd_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `prd_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
