@@ -93,14 +93,34 @@ include "dbconnect.php";
 						<div class="col-md-3 clearfix">
 							<div class="header-ctn">
 								<!-- Wishlist -->
-								<div>
+								<!-- <div>
 									<a href="#">
 										<i class="fa fa-heart-o"></i>
 										<span>Your Wishlist</span>
 										<div class="qty">2</div>
-									</a>
-								</div>
+									</a> -->
+								<!-- </div> -->
 								<!-- /Wishlist -->
+
+
+<?php
+
+								function getUserIpAddr(){
+    if(!empty($_SERVER['HTTP_CLIENT_IP'])){
+        //ip from share internet
+        $ip = $_SERVER['HTTP_CLIENT_IP'];
+    }elseif(!empty($_SERVER['HTTP_X_FORWARDED_FOR'])){
+        //ip pass from proxy
+        $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+    }else{
+        $ip = $_SERVER['REMOTE_ADDR'];
+    }
+    return $ip;
+}
+// echo 'User IP - '.$_SERVER['REMOTE_ADDR'];
+echo 'User Real IP - '.getUserIpAddr();
+
+?>
 
 								<!-- Cart -->
 								<div class="dropdown">
