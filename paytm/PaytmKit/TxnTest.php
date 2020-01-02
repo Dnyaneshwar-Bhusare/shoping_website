@@ -2,6 +2,7 @@
 	header("Pragma: no-cache");
 	header("Cache-Control: no-cache");
 	header("Expires: 0");
+	$total = $_GET['total'];
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -49,10 +50,10 @@
 				</tr>
 				<tr>
 					<td>5</td>
-					<td><label>txnAmount*</label></td>
+					<td><label>totalAmount*</label></td>
 					<td><input title="TXN_AMOUNT" tabindex="10"
 						type="text" name="TXN_AMOUNT"
-						value="1">
+						value="<?php echo $total; ?>">
 					</td>
 				</tr>
 				<tr>

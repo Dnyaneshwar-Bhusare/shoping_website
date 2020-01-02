@@ -235,9 +235,9 @@ if(!isset($_POST['check'])){
 
 
 ?>
-
-                <a href="paytm/PaytmKit/TxnTest.php" class="primary-btn order-submit">Place order</a>
-
+             <form method="get">
+                <a href="paytm/PaytmKit/TxnTest.php? total=<?php echo $total; ?>" class="primary-btn order-submit">Place order</a>
+             </form>
                 <?php }?>
             </div>
             <!-- /Order Details -->
