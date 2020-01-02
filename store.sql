@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.1
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Dec 10, 2019 at 10:47 AM
--- Server version: 10.4.8-MariaDB
--- PHP Version: 7.1.33
+-- Host: 127.0.0.1
+-- Generation Time: Dec 28, 2019 at 01:18 PM
+-- Server version: 10.1.30-MariaDB
+-- PHP Version: 5.6.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -59,7 +59,9 @@ CREATE TABLE `cart` (
 --
 
 INSERT INTO `cart` (`p_id`, `ip_add`, `qty`) VALUES
-(31, '::1', 1);
+(27, '::1', 2),
+(28, '::1', 2),
+(29, '::1', 2);
 
 -- --------------------------------------------------------
 
@@ -87,6 +89,19 @@ INSERT INTO `categories` (`cat_id`, `cat_title`, `catagory_details`) VALUES
 (7, 'Zinga', 'One of the health benefits of prawn is it maintains good cardiovascular health due to its high\r\n\r\ncontent in vitamin B12 contributes to better cardiovascular regulation.\r\nCalcium and vitamin E content in prawns maintains healthy skin, teeth and bones'),
 (8, 'Black Pomfret', 'It is very low in calories and fat. It is rich in protein which is why it helps reduce the risk of cardiovascular\r\ndiseases and also helps to muscles. It contains high amounts of omega 3 fatty acids that supply DHA,\r\ncomponent for development of the brain'),
 (9, 'Surmai', 'This popular sea fish is considered as quite a delicacy and excellent table fare in most parts of India. In\r\nmenu cards, it goes by the name of King Fish. Surmai is flavourful by itself and does not require any special\r\npreparation to enhance its natural taste. Packed with Omega-3 fatty acids, Surmai is one of the healthiest');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contact_us`
+--
+
+CREATE TABLE `contact_us` (
+  `name` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `web` varchar(20) NOT NULL,
+  `text` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -185,13 +200,13 @@ ALTER TABLE `ad_log`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `cat_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `cat_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `prd_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+  MODIFY `prd_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

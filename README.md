@@ -1,2 +1,0 @@
-# Electronix-online-shopping-site
-
